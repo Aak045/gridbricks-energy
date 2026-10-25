@@ -1,0 +1,9 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: gridbricks-api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
