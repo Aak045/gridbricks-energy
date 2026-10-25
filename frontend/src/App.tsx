@@ -54,7 +54,7 @@ interface AccuracyResponse {
   message?: string;
 }
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "";
 
 function utcDate(date: Date) {
   return date.toISOString().slice(0, 10);
@@ -92,18 +92,8 @@ function formatChartTime(value: string) {
 }
 
 function App() {
-  const [today] = useState(() => new Date());
-  const [endDate, setEndDate] = useState(() => {
-    const date = new Date();
-    date.setUTCDate(date.getUTCDate() - 1);
-    return utcDate(date);
-  });
-
-  const [startDate, setStartDate] = useState(() => {
-    const date = new Date();
-    date.setUTCDate(date.getUTCDate() - 3);
-    return utcDate(date);
-  });
+ const [endDate, setEndDate] = useState("2026-01-02");
+const [startDate, setStartDate] = useState("2026-01-01");
 
   const [appliedStart, setAppliedStart] = useState(startDate);
   const [appliedEnd, setAppliedEnd] = useState(endDate);
