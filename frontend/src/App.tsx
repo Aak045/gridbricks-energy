@@ -92,6 +92,7 @@ function formatChartTime(value: string) {
 }
 
 function App() {
+  const today = new Date();
  const [endDate, setEndDate] = useState("2026-01-02");
 const [startDate, setStartDate] = useState("2026-01-01");
 
